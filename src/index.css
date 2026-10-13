@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-navy-950 text-slate-200 antialiased selection:bg-electric-600 selection:text-white min-h-screen font-sans;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070C16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563EB;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-electric-400;
+  }
+
+  .text-gradient-electric {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric-400 via-blue-500 to-electric-300;
+  }
+
+  .bg-glass {
+    @apply bg-navy-900/70 backdrop-blur-md border border-slate-800/80;
+  }
+
+  .bg-glass-card {
+    @apply bg-gradient-to-b from-navy-850/80 to-navy-900/90 backdrop-blur-md border border-slate-800/80 hover:border-electric-500/40 transition-all duration-300;
+  }
+
+  .glow-border {
+    @apply relative before:absolute before:-inset-[1px] before:rounded-2xl before:bg-gradient-to-r before:from-electric-500/20 before:via-cyan-400/20 before:to-transparent before:-z-10 before:blur-sm;
+  }
+}
